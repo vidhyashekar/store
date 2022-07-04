@@ -11,6 +11,8 @@
         xmlhttp.open("GET",baseurl + "/v1/shopping-list/62c07ab801342de68bdf16dc",true);
         xmlhttp.onreadystatechange = function() {
           if(xmlhttp.status ===200){
+		  alert(JSON.stringify(xmlhttp.responseText));
+		  console.log(xmlhttp.responseText);
             var list = JSON.parse(xmlhttp.responseText);
           }
         };
@@ -29,14 +31,7 @@
 		"https://media.gettyimages.com/photos/turkey-chili-picture-id503311931?s=2048x2048",
 		""
 	],
-	"recipeCategory": "main course",
-	"recipeCuisine": "Asian",
-	"prepTime": "PT15M",
-	"cookTime": "PT70M",
-	"totalTime": "PT65M",
-	"recipeYield": "4",
-	"description": "Lorem ipsum text dummy",
-	"keywords": "sugar, fats",
+	
 	"author": {
 		"@type": "Person",
 		"name": ""
@@ -52,7 +47,12 @@
 			"@type": "HowToStep",
 			"text": ""
 		}
-	]
+	],
+	 "publisher": {
+     	 "@type": "Organization",
+     	 "name": "Google",
+     	 "logo": "https://google.com/logo.jpg"
+        }
 }
 </script>
   </head>
