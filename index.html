@@ -12,8 +12,6 @@
         xmlhttp.onreadystatechange = function() {
           if(xmlhttp.status ===200){
             var list = JSON.parse(xmlhttp.responseText);
-            var ingredients = "<div> Ingredients </div><div>" + list.data.attributes.ingredients + "</div>"
-            document.getElementById("shoppingInfo").innerHTML = ingredients;
           }
         };
         xmlhttp.send();
