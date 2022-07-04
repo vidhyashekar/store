@@ -4,57 +4,47 @@
 (function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "https://widgets.instacart.com/widget-bundle.js"; js.async = true; fjs.parentNode.insertBefore(js, fjs); })(document, "script", "standard-instacart-widget-v1");
 </script>
   <head>
-<script>
-      var baseurl = "https://api.wellnesswindow.cilalabs.dev";
-      function loadList(){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET",baseurl + "/v1/shopping-list/62c07ab801342de68bdf16dc",true);
-        xmlhttp.onreadystatechange = function() {
-          if(xmlhttp.status ===200){
-            var list = JSON.parse(xmlhttp.responseText);
-            var ingredients = "<div> Ingredients </div><div>" + list.data.attributes.ingredients + "</div>"
-            document.getElementById("shoppingInfo").innerHTML = ingredients;
-          }
-        };
-        xmlhttp.send();
-      }
-      window.onload = function(){
-        loadList();
-      }
-</script>
  <script type="application/ld+json">
 {
-	"@context": "http://schema.org/",
-	"@type": "Recipe",
-	"name": "Chilli Chicken",
-	"image": [
-		"https://media.gettyimages.com/photos/turkey-chili-picture-id503311931?s=2048x2048",
-		""
-	],
-	"recipeCategory": "main course",
-	"recipeCuisine": "Asian",
-	"prepTime": "PT15M",
-	"cookTime": "PT70M",
-	"totalTime": "PT65M",
-	"recipeYield": "4",
-	"description": "Lorem ipsum text dummy",
-	"keywords": "sugar, fats",
-	"author": {
-		"@type": "Person",
-		"name": ""
-	},
-	"nutrition": {
-		"@type": "NutritionInformation"
-	},
-	"recipeIngredient": [
-		list.data.attributes.ingredients
-	],
-	"recipeInstructions": [
-		{
-			"@type": "HowToStep",
-			"text": ""
-		}
-	]
+    "@context": "http://schema.org/",
+    "@type": "Recipe",
+    "name": "Chilli Chicken",
+    "image": [
+        "https://media.gettyimages.com/photos/turkey-chili-picture-id503311931?s=2048x2048",
+        ""
+    ],
+    "recipeCategory": "main course",
+    "recipeCuisine": "Asian",
+    "prepTime": "PT15M",
+    "cookTime": "PT70M",
+    "totalTime": "PT65M",
+    "recipeYield": "4",
+    "description": "Lorem ipsum text dummy",
+    "keywords": "sugar, fats",
+    "author": {
+        "@type": "Person",
+        "name": ""
+    },
+    "nutrition": {
+        "@type": "NutritionInformation"
+    },
+    "recipeIngredient": [
+        "Chicken 1/2 kg",
+        "Oil 1 Ltr",
+        "Pepper powder",
+        "Chilli"
+    ],
+    "recipeInstructions": [
+        {
+            "@type": "HowToStep",
+            "text": ""
+        }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google",
+      "logo": "https://google.com/logo.jpg"
+   }
 }
 </script>
   </head>
