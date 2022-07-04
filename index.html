@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <script>
@@ -5,22 +6,24 @@
 </script>
   <head>
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  loadList()
+});
       var baseurl = "https://api.wellnesswindow.cilalabs.dev";
+      var recipie = [];
       function loadList(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET",baseurl + "/v1/shopping-list/62c07ab801342de68bdf16dc",true);
         xmlhttp.onreadystatechange = function() {
-          if(xmlhttp.status ===200){
-		  alert(JSON.stringify(xmlhttp.responseText));
-		  console.log(xmlhttp.responseText);
-                  var list = JSON.parse(xmlhttp.responseText.data.attributes.ingredients);
+          if(xmlhttp.status === 200){
+               var list = JSON.parse(xmlhttp.responseText);
+                var recipie = list.data.attributes.ingredients;   
+            console.log(recipie)
           }
         };
         xmlhttp.send();
       }
-      window.onload = function(){
-        loadList();
-      }
+      
 </script>
  <script type="application/ld+json">
 {
@@ -39,7 +42,7 @@
 	"nutrition": {
 		"@type": "NutritionInformation"
 	},
-	"recipeIngredient": list,
+	"recipeIngredient": recipie,
 	"recipeInstructions": [
 		{
 			"@type": "HowToStep",
