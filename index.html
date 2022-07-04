@@ -13,7 +13,7 @@
           if(xmlhttp.status ===200){
 		  alert(JSON.stringify(xmlhttp.responseText));
 		  console.log(xmlhttp.responseText);
-            var list = JSON.parse(xmlhttp.responseText);
+                  var list = JSON.parse(xmlhttp.responseText.data.attributes.ingredients);
           }
         };
         xmlhttp.send();
@@ -39,7 +39,7 @@
 	"nutrition": {
 		"@type": "NutritionInformation"
 	},
-	"recipeIngredient": list.data.attributes.ingredients,
+	"recipeIngredient": list,
 	"recipeInstructions": [
 		{
 			"@type": "HowToStep",
